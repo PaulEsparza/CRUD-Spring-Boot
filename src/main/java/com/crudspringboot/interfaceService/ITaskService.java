@@ -1,10 +1,8 @@
 package com.crudspringboot.interfaceService;
 
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Optional;
 
-import com.crudspringboot.models.Task;
 import com.crudspringboot.models.TaskModel;
 
 public interface ITaskService {
