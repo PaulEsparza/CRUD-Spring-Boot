@@ -8,7 +8,8 @@ import com.crudspringboot.models.TaskModel;
 import com.crudspringboot.repositories.ITaskRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
-
+import org.springframework.stereotype.Service;
+@Service
 public class TaskService implements ITaskService {
 
     @Autowired
