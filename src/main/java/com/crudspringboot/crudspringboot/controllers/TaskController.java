@@ -1,9 +1,9 @@
-package com.crudspringboot.controllers;
+package com.crudspringboot.crudspringboot.controllers;
 
 import java.util.ArrayList;
 
-import com.crudspringboot.models.TaskModel;
-import com.crudspringboot.services.TaskService;
+import com.crudspringboot.crudspringboot.services.TaskService;
+import com.crudspringboot.crudspringboot.models.TaskModel;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

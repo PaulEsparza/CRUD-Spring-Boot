@@ -1,11 +1,11 @@
-package com.crudspringboot.services;
+package com.crudspringboot.crudspringboot.services;
 
 import java.util.ArrayList;
 import java.util.Optional;
 
-import com.crudspringboot.interfaceService.ITaskService;
-import com.crudspringboot.models.TaskModel;
-import com.crudspringboot.repositories.ITaskRepository;
+import com.crudspringboot.crudspringboot.interfaceService.ITaskService;
+import com.crudspringboot.crudspringboot.models.TaskModel;
+import com.crudspringboot.crudspringboot.repositories.ITaskRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

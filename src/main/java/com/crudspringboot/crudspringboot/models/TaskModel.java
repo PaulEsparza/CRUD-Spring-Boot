@@ -1,4 +1,4 @@
-package com.crudspringboot.models;
+package com.crudspringboot.crudspringboot.models;
 
 import javax.persistence.Basic;
 import javax.persistence.Column;
@@ -16,7 +16,7 @@ public class TaskModel {
     @Basic(optional = false)
     @Column(name = "id", nullable = false)
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
+    private Integer id;
 
     @Basic(optional = false)
     @Column(name = "responsable", nullable = false)
@@ -30,13 +30,13 @@ public class TaskModel {
 
     }
 
-    public TaskModel(int id, String responsable, String description){
+    public TaskModel(Integer id, String responsable, String description){
         this.id = id;
         this.responsable = responsable;
         this.description = description;
     }
 
-    public int getId(){
+    public Integer getId(){
         return this.id;
     }
 
