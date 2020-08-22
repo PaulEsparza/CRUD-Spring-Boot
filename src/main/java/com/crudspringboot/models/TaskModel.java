@@ -10,7 +10,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "tasks")
-public class Task {
+public class TaskModel {
 
     @Id
     @Basic(optional = false)
@@ -26,11 +26,11 @@ public class Task {
     @Column(name = "description", nullable = false)
     private String description;
 
-    public Task(){
+    public TaskModel(){
 
     }
 
-    public Task(int id, String responsable, String description){
+    public TaskModel(int id, String responsable, String description){
         this.id = id;
         this.responsable = responsable;
         this.description = description;
