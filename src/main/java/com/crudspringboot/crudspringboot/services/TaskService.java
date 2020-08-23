@@ -28,8 +28,9 @@ public class TaskService implements ITaskService {
 
     @Override
     public TaskModel createTask(TaskModel task) {
-        // TODO Auto-generated method stub
-        return null;
+        //int res = 0;
+        TaskModel t = repo.save(task);
+        return t;
     }
 
     @Override
