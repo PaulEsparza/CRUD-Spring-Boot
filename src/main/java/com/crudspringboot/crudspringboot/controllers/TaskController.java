@@ -25,7 +25,7 @@ public class TaskController {
     @Autowired
     private TaskService service;
 
-    public boolean editing;
+    public boolean editing, reading;
 
     @GetMapping("/")
     public String getTasks(Model model) {
@@ -39,7 +39,9 @@ public class TaskController {
     public String newTask(Model model){
         model.addAttribute("task", new TaskModel());
         this.editing = false;
-        model.addAttribute("editing", this.editing);        
+        model.addAttribute("editing", this.editing); 
+        this.reading = false;
+        model.addAttribute("reading", this.reading);       
         return "form";
     }
 
@@ -50,12 +52,23 @@ public class TaskController {
         response.sendRedirect("/");
     }
 
+    @GetMapping("/readTask/{id}")
+    public String readTask(@PathVariable int id, Model model){
+        Optional<TaskModel> task = service.getTaskId(id); 
+        model.addAttribute("task", task);
+        this.reading = true;
+        model.addAttribute("reading", this.reading);      
+        return "form";
+    }
+
     @GetMapping("/editTask/{id}")
     public String editTask(@PathVariable int id, Model model){
         Optional<TaskModel> task = service.getTaskId(id); 
         model.addAttribute("task", task);
         this.editing = true;
-        model.addAttribute("editing", this.editing);      
+        model.addAttribute("editing", this.editing);     
+        this.reading = false;
+        model.addAttribute("reading", this.reading); 
         return "form";
     }
 

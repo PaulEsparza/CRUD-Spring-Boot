@@ -27,7 +27,6 @@ public class TaskService implements ITaskService {
 
     @Override
     public TaskModel createTask(TaskModel task) {
-        //int res = 0;
         TaskModel t = repo.save(task);
         return t;
     }
