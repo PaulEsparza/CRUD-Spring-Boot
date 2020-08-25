@@ -22,8 +22,7 @@ public class TaskService implements ITaskService {
 
     @Override
     public Optional<TaskModel> getTaskId(int id) {
-        // TODO Auto-generated method stub
-        return null;
+        return this.repo.findById(id);
     }
 
     @Override
@@ -35,8 +34,7 @@ public class TaskService implements ITaskService {
 
     @Override
     public void deleteTask(int id) {
-        // TODO Auto-generated method stub
-
+        repo.deleteById(id);
     }
     
 }

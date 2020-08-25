@@ -5,15 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <title>Add Task</title>
+    <title th:text="${editing} ? 'Edit Task' : 'New Task'"></title>
 </head>
 <body>
     <div class="row">
         <div class="col-md-4"></div>
-        <div class="col-md-4 mt-4">
-            <div class="card">
+        <div class="col-md-4">
+            <div class="card mt-4">
+                <div class="card-header">
+                    <h4 th:text="${editing} ? 'Edit Task' : 'New Task'"></h4>
+                </div>
                 <div class="card-body">
                     <form th:action="@{/saveTask}" th:object="${task}" method="post">
+                        <div class="form-group" th:if="${editing}">
+                            <input th:field="*{id}" type="number" name="id" class="form-control" placeholder="id" readonly>
+                        </div>
                         <div class="form-group">
                             <input th:field="*{responsable}" type="text" name="responsable" class="form-control" placeholder="Responsable">
                         </div>
@@ -22,6 +28,7 @@
                         </div>
                         <div class="form-group">
                             <button type="submit" class="btn btn-success">Add Task</button>
+                            <a href="index.html" th:href="@{/}">Return to home</a>
                         </div>
                     </form>
                 </div>
